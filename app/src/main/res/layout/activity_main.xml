@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="#075E55">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/appBarLayout">
+        android:id="@+id/appBarLayout"
+        android:background="#075E55">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:id="@+id/toolbarMainActivity"
             app:titleTextColor="@color/white"
-            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+            android:background="#075E55"
             app:popupTheme="@style/PopupMenuStyle">
 
             <TextView
@@ -28,7 +30,8 @@
                 android:padding="2dp"
                 android:text="@string/app_name"
                 android:gravity="center"
-                style="@android:style/TextAppearance.Large" />
+                style="@android:style/TextAppearance.Large"
+                android:background="#075E55"/>
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -39,15 +42,25 @@
             app:tabIndicatorColor="@color/holo_orange"
             app:tabIndicatorHeight="4dp"
             app:tabTextColor="@color/dark"
-            app:tabSelectedTextColor="@color/white"/>
+            app:tabSelectedTextColor="@color/white"
+            android:background="#075E55"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/appBarLayout"
-        android:id="@+id/viewPager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="LARGE_BANNER"
+
+        ads:adUnitId="@string/banner_ad_unit_id" />
 
 </RelativeLayout>

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PrivacyPolicy">
+    tools:context=".PrivacyPolicy"
+    android:background="#075E55">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbarPolicy"

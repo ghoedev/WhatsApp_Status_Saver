@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="a.gautham.statusdownloader">
+    package="statussaver">
 
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission
         android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         android:minSdkVersion="30"
@@ -23,20 +24,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PrivacyPolicy"></activity>
-        <activity android:name=".AboutUs" />
-        <activity android:name=".SplashActivity">
+        <activity android:name="com.ghoedev.statussaver.PrivacyPolicy"></activity>
+        <activity android:name="com.ghoedev.statussaver.AboutUs" />
+        <activity android:name="com.ghoedev.statussaver.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.ghoedev.statussaver.MainActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="a.gautham.statusdownloader.provider"
+            android:authorities="statussaver.provider"
             android:exported="false"
             android:grantUriPermissions="true"
             tools:replace="android:authorities">
@@ -44,7 +45,15 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"
                 tools:replace="android:resource" />
+
+
+
         </provider>
+        <meta-data android:name="com.google.android.gms.version"
+            />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2513915580660974~2975122595"/>
     </application>
 
 </manifest>
